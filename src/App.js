@@ -35,7 +35,7 @@ const App = () => {
         <></>
       ) : (
         <div className="result-container">
-          <img className="avatar" src={data.avatar_url} alt='User Image' />
+          <img className="avatar" src={data.avatar_url} alt='User' />
           <p className="user-name">{data.login}</p>
           <div className="about-repo">
             <div className="about">
