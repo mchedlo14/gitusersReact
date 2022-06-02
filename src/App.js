@@ -14,6 +14,8 @@ const App = () => {
     .then(data => setData(data))
   }
 
+  console.log(data)
+
   return (
     <div className="main-container">
       <div className="input-container">
@@ -35,7 +37,7 @@ const App = () => {
         <></>
       ) : (
         <div className="result-container">
-          <img className="avatar" src={data.avatar_url} alt='User' />
+          {/* <img className="avatar" src={data.avatar_url} alt='User' />
           <p className="user-name">{data.login}</p>
           <div className="about-repo">
             <div className="about">
@@ -52,6 +54,49 @@ const App = () => {
               <p>Following</p>
               <p className="about-info">{data.following}</p>
             </div>
+          </div> */}
+          <div className="image-container">
+            <img className="avatar" src={data.avatar_url} alt="User" />
+          </div>
+
+          <div className='information-container'>
+            <div className='joined-date'>
+              <p className="user-name">{data.login}</p>
+              <p className="date">Joined 2020-05-12 </p>
+            </div>
+            
+            <div className='tag-container'>
+              <p>@{data.login}</p>
+            </div>
+
+            <div>
+              {data.bio === null ? (
+                <p className='bio'>Bio not found</p>
+              ):(
+                <p className='bio'>{data.bio}</p>
+              )}
+            </div>
+
+
+            <div className="about-repo">
+            <div className="about">
+              <p>Repos</p>
+              <p className="about-info">{data.public_repos}</p>
+            </div>
+
+            <div className="about">
+              <p>Followers</p>
+              <p className="about-info">{data.followers}</p>
+            </div>
+
+            <div className="about">
+              <p>Following</p>
+              <p className="about-info">{data.following}</p>
+            </div>
+          </div>
+
+
+
           </div>
         </div>
       )}
